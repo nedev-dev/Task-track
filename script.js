@@ -26,10 +26,14 @@ listContainer.addEventListener("click", function(e) {
     }
 }, false);
 
+inputBox.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') myButton.click();
+}); 
+
 function saveData(){
     localStorage.setItem("data", listContainer.innerHTML);
 }
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
-showtask();
+showTask();
